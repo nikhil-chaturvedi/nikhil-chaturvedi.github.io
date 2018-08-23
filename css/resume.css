@@ -83,6 +83,15 @@ p.lead {
   color: #631f1f;
 }
 
+.dev-icons-2 {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dev-icons-2:hover {
+  color: #631f1f;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -160,9 +169,6 @@ section.resume-section .resume-item .resume-date {
 }
 
 @media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
   section.resume-section .resume-item .resume-date {
     min-width: 18rem;
   }
