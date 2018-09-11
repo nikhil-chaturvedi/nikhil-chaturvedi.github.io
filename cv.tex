@@ -1,0 +1,246 @@
+\documentclass{article}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,    
+  }
+
+\newenvironment{longversion}{}{} % use this to show longversion
+\newenvironment{shortversion}{}{} % use this to show shortversion
+
+\usepackage{changepage}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{sectsty}
+\usepackage[letterpaper,margin=0.6in]{geometry}
+\pagestyle{empty}
+
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+%edit the section font and style
+\sectionfont{\normalfont\sectionrule{0pt}{0pt}{-4pt}{1pt}}
+
+%make all sections cap and first letter capital
+\newcommand{\tmpsection}[1]{}
+\let\tmpsection=\section
+\renewcommand{\section}[1]{\tmpsection*{\textsc{#1}}}
+
+%set the line spacing
+\setstretch{1.10}
+
+\title{Nikhil Chaturvedi - Resume}
+
+
+\begin{document}
+
+\begin{center}
+ {\large \textsc{\textbf{NIKHIL CHATURVEDI}} }\\ 
+\begin{tabular}{ l p{4cm} r }
+    & &   \\
+  Computer Science and Engineering & & 709nikhil@gmail.com \\
+  Indian Institute of Technology, Delhi & & nikhil-chaturvedi.github.io \\
+\end{tabular}
+\end{center}
+
+
+\section{Academic Details}
+\begin{center}
+\begin{tabular}{ |c | c | c | c |}
+\hline
+Year & Degree & Institute & CGPA/Percentage \\ 
+\hline
+2013-2018 & B.Tech and M.Tech in Computer Science & Indian Institute of Technology & UG: 9.17/10 \\ 
+ & and Engineering & Delhi & PG: 9.83/10 \\ 
+\hline
+2013 & Class XII, CBSE & St. Columba's School, New Delhi & 98.8\% \\
+\hline
+2011 & Class X, CBSE & St. Columba's School,  New Delhi & 10/10 \\  \hline
+\end{tabular}
+\end{center}
+
+\section{Scholastic Achievements And Awards}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item \textbf{All India Rank of 4} in the IIT Joint Entrance Examination (JEE) Mains 2013; \textbf{State Rank of 1} across Delhi.
+  \item \textbf{All India Rank 2} in Class 12 Senior Secondary Examinations by the Central Board of Secondary Education (2013).
+  \item \textbf{Department Rank of 5} in the batch of Computer Science on basis of academic performance (across 8 semesters).
+    \item \textbf{Cargill Global Scholarship:} 1 of 10 students in India to be awarded; underwent 2 years of leadership grooming.
+    \item \textbf{IIT Delhi Semester Merit Award} for having a CGPA in the top 7\% of students for semesters 1 \& 2 (2013-14).
+\item \textbf{Teaching Assistant} for undergraduates in 3 consecutive semesters (Computer Architecture \& Computer Networks).
+\end{itemize}
+
+\section{Publications}
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Chaturvedi, N., Garg, R. \& Prathosh, A.P. (2018). On Decidability of Sanskrit Morphophonological Processes.
+\item Chaturvedi, N. \& Garg, R. (2018). A Tool for Transliteration of Bilingual Texts involving Sanskrit. In WSC.
+\item Bhardwaj, S., Gantayat, N., Chaturvedi, N., Garg, R., \& Agarwal, S. (2018). SandhiKosh: A Benchmark Corpus for Evaluating Sanskrit Sandhi Tools. In LREC.
+\end{itemize}
+
+\section{Internships and Major Projects}
+\begin{list} {\labelitemi}{\leftmargin=0em}
+\setlength{\leftmargin}{0pt}
+
+\item[]
+  \headerrow
+    {\textbf{Semantic Generalisation of Query Patterns}}
+    {Microsoft IDC, Hyderabad, India}
+  \\
+  \headerrow
+    {\emph{Summer Internship}}
+    {\emph{May - July, 2017}}
+      \begin{itemize}
+	\item Performed Linear Dirichlet Allocation on web-table dumps for topic segregation; near 100\% accuracy on Wikia.
+        \item Extracted, cleaned and parsed queries for a given class using Satori's knowledge graph for entities \& source urls.
+        \item Generalised queries \& discovered candidate attributes for fact answers using Entity-Concept database - ProBase.
+        \item Filtered candidates by formulating a linear optimisation problem with web frequency, semantic similarity scores.
+	  \item Discovered 24k relevant queries for country class and 38k queries for sports athletes; Was presented with a PPO.
+      \end{itemize}
+
+\item[]
+  \headerrow
+    {\textbf{Co-process Lifecycle Framework}}
+    {Indeed.com, Austin, Texas, USA}
+  \\
+  \headerrow
+    {\emph{Summer Internship}}
+    {\emph{May - July, 2016}}
+      \begin{itemize}
+        \item Developed a framework in Go to spawn, log and manage side processes during internal application deployments.
+        \item Used Caddy web-server and the framework to create a proxy layer atop each deployable for increased security.
+        \item Built a TLS-supporting open source LDAP plugin for Caddy to authenticate and authorize on specified paths.
+        \item Currently used in 10 production data-centres, for hundreds of daemons and handles millions of requests daily.
+      \end{itemize}
+
+\item[]
+  \headerrow
+    {\textbf{Multi-Node Network Simulator}}
+    {EPFL, Lausanne, Switzerland}
+  \\
+  \headerrow
+    {\emph{Summer Internship}}
+    {\emph{May - July, 2015}}
+      \begin{itemize}
+        \item Integrated network simulator NS3 with QEMU to model network latency and topology for large  data-centers.
+        \item Used it to evaluate glue-less fabric network protocol, soNUMA, in a rack architecture free of external routers.
+        %\item Received a Letter of Recommendation from the project supervisor, Prof. Babak Falsafi, for the efficient work.
+      \end{itemize}
+
+\end{list}
+
+\begin{longversion}
+\end{longversion}
+
+\begin{longversion}
+\section{Other Projects}
+\begin{list} {\labelitemi}{\leftmargin=0em}
+\setlength{\leftmargin}{0pt}
+
+\item[]
+  \headerrow{ \textbf{Thesis: Sanskrit Computational Linguistics}} {Prof. Rahul Garg, 2017-18}
+  \begin{itemize} \item[]
+  Deduced the undecidability of general morphophonological processes by mapping a Turing Machine to an arbitrary well-defined language. Compiled a machine readable rule-set and constructed a C++ tool to perform Sanskrit Sandhi. Trained a syllable based Naive Bayes model for word level classification amongst romanised Devanagiri and English.
+  \end{itemize}
+ 
+
+\item[]
+  \headerrow{ \textbf{OCR Based Word Predictor}} {Prof. Parag Singla, November 2016}
+  \begin{itemize} \item[]
+  Used Markov Graphical Models to recognise words from images using neighbouring dependencies. Formulated the problem as an undirected graphical network and converted the same to a junction tree. Performed exact inference over the tree using two-way message passing algorithm as well as loopy belief propagation algorithm. 
+  \end{itemize}
+
+\item[]
+  \headerrow{ \textbf{Facial Similarity Prediction}} {Prof. Parag Singla, April 2016}
+  \begin{itemize} \item[]
+  Predicted similarity between high-dimensional facial data. Used forward selection and PCA for dimension reduction. Compared performance of SVMs, DTrees, NNs and Naive Bayes on test sets with varying mean \& variance.
+  \end{itemize}
+  
+  \item[]
+  \headerrow{ \textbf{Online Administrative Portal and Backend}} {Rendezvous, IITD Cultural Festival, 2017}
+  \begin{itemize} \item[]
+  Built the backend and administrative portal for North India\textsc{\char13}s largest cultural festival with a traffic of over 10k users daily. Used React, Node.js, DynamoDB \& Webpack for bundling. Hosted on AWS and handled mails through SES.
+  \end{itemize}
+
+\item[]
+  \headerrow{ \textbf{Optimal Strategy for Blackjack}} {Prof. Mausam, October 2015}
+  \begin{itemize} \item[]
+  Modelled a single player blackjack game in Python as a Markov Decision Process with state space as cards in hand. Decided the optimal action amongst hit, stand, double and split by evaluating expected returns for a given bet.
+  \end{itemize}
+
+\item[]
+  \headerrow{ \textbf{File Storage and Sharing Service}} {Prof. Huzur Saran, February 2015}
+  \begin{itemize} \item[]
+  Built server \& client side of a TCP/IP based cloud service using C++ and Qt with persistent storage, share \& sync. Implemented data de-duplication to minimize server disk usage. OpenSSL was used to ensure encrypted file transfer.
+  \end{itemize}
+
+\end{list}
+\end{longversion}
+
+\begin{longversion}
+\section{Relevant Courses}
+\begin{itemize}
+  \setlength\itemsep{-1em}
+    \item \textbf{Computer Science:} \\
+      Data Structures \& Algorithms, Programming Languages, Computer Architecture, Computer Networks, Artificial Intelligence, Analysis \& Design of Algorithms, Parallel Programming, Operating Systems, Algorithmic Game Theory, Machine Learning, Probabilistic Graphical Models, Deep Learning, Data Mining, Cryptography \& Network Security  \\
+
+    \item \textbf{Mathematics and Electrical Engineering:} \\
+      Calculus, Linear Algebra, Intro to Electrical Engineering, Probability \& Stochastic Processes, Signals \& Systems\\
+      
+      \item \textbf{Programming Languages:} Java, Python, C++, C\#, C, Go, Matlab, Lex, Yacc, SQL\\
+      
+	   \item \textbf{Web Development:} AWS, ReactJS, AngularJS, NodeJS, JQuery, HTML, PHP, CSS3
+\end{itemize}
+\end{longversion}
+
+\section{Extra Curricular Activities}
+
+\begin{list} {\labelitemi}{\leftmargin=0em}
+\setlength{\leftmargin}{0pt}
+\item[]
+  \headerrow
+    {\textbf{Executive Team Member, Rendezvous}}
+    {April, 2016 - April, 2017}
+      \begin{itemize}
+        \item Selected to lead a fourtier team of 30 student coordinators and 500 volunteers for 100+ Rendezvous events.
+        \item Conceptualized the infrastructure, security, publicity and hospitality plans; contacted artists and celebrities.
+      \end{itemize}
+
+\item[]
+  \headerrow
+    {\textbf{Debating Secretary, BRCA}}
+    {April, 2015 - April, 2016}
+      \begin{itemize}
+        \item Elected to lead a team of 13 hostel representatives to run a debating society with over 150 members.
+        \item Planned and executed over 10 inter-hostel and inter-college debating tournaments through the year.
+      \end{itemize}
+
+\end{list}
+
+\end{document}
